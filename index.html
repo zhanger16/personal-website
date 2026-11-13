@@ -1,0 +1,280 @@
+<!doctype html>
+<!--
+  Personal site. Filled in from the November 2026 co-op résumé. Anything still
+  in [square brackets] wasn't on the résumé; search for "[" to find them.
+  Numbers and claims only go in if you can back them up.
+  - Headshot: see the "portrait" block in the opening section.
+  - Résumé: put your PDF at assets/resume.pdf.
+  - Colors and type live at the top of assets/css/styles.css.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ryan Zhang · Computer Science, UBC</title>
+  <meta name="description" content="Ryan Zhang, Computer Science student at the University of British Columbia (graduating May 2029). Medical device software developer at Kardium, SMT solver research at UBC. Projects, experience and résumé." />
+  <meta name="theme-color" content="#f6f7f9" />
+  <link rel="preload" href="assets/fonts/alegreya-sans-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/alegreya-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#projects">Skip to projects</a>
+
+  <header class="masthead" id="masthead">
+    <a class="masthead__name" href="#top">Ryan Zhang</a>
+    <nav class="masthead__nav" id="nav" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#references">References</a>
+      <a href="#fun-facts">Fun facts</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--ink btn--small masthead__resume" href="assets/resume.pdf" download data-resume>Résumé</a>
+    <button class="masthead__toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+      <span class="visually-hidden">Menu</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" /></svg>
+    </button>
+  </header>
+
+  <main>
+    <!-- ===== Opening: the basin and the still margin ===== -->
+    <section class="opening" id="top" aria-labelledby="name">
+      <canvas class="basin" id="basin" aria-hidden="true"></canvas>
+      <div class="basin-fallback" aria-hidden="true"></div>
+
+      <div class="opening__margin">
+        <!-- Replace the slot with: <img src="assets/img/headshot.jpg" alt="Ryan Zhang" width="480" height="600" /> -->
+        <figure class="portrait">
+          <div class="portrait__slot"><span>[Headshot]</span></div>
+        </figure>
+
+        <h1 class="opening__name" id="name">Ryan Zhang</h1>
+
+        <p class="opening__lede">
+          Computer Science student at the University of British Columbia, graduating May 2029.
+          Looking for my next <strong>software engineering co-op</strong> [term, e.g. Summer 2027].
+        </p>
+
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>Vancouver, BC</dd></div>
+          <div><dt>GPA</dt><dd>93.4%</dd></div>
+          <div><dt>Work authorization</dt><dd>[e.g. Canadian citizen]</dd></div>
+          <div><dt>Available from</dt><dd>[Month Year]</dd></div>
+        </dl>
+
+        <div class="actions" id="openingActions">
+          <a class="btn btn--ink" href="assets/resume.pdf" download data-resume>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
+            Download résumé
+          </a>
+          <a class="btn btn--line" href="mailto:zhanger16@icloud.com">Email me</a>
+        </div>
+        <p class="basin-hint" aria-hidden="true">Drag across the water to stir the ink. Click to add a drop.</p>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section__head">
+        <h2 id="projects-title">Selected projects</h2>
+        <p>Things I&rsquo;ve built: the problem, what I made, and where to see it.</p>
+      </div>
+
+      <ol class="projects">
+        <li class="project project--lead">
+          <!-- Replace the print with: <img src="assets/img/project-1.png" alt="[Describe the screenshot]" /> -->
+          <div class="project__print" data-print="0"><canvas aria-hidden="true"></canvas><span class="project__placeholder">[Screenshot]</span></div>
+          <div class="project__body">
+            <h3>Neighbours in Need</h3>
+            <p class="project__meta">nwHacks 2025 · Team project · Node.js, JavaScript, HTML, CSS</p>
+            <p>Built at nwHacks 2025, Western Canada&rsquo;s largest hackathon: a service that finds help nearby, like someone to shovel snow or walk a dog, focused on what&rsquo;s available within 24 hours. We built the web app with a Node.js backend and a JavaScript, HTML and CSS frontend.</p>
+            <p class="project__links">
+              <a href="[https://github.com/you/neighbours-in-need]">Code <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7" /></svg></a>
+              <a href="[https://devpost.com/software/neighbours-in-need]">Devpost <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7" /></svg></a>
+            </p>
+          </div>
+        </li>
+        <li class="project">
+          <div class="project__print" data-print="1"><canvas aria-hidden="true"></canvas><span class="project__placeholder">[Screenshot]</span></div>
+          <div class="project__body">
+            <h3>Blackjack</h3>
+            <p class="project__meta">January 2025 · Personal project, started in CPSC 210</p>
+            <p>A CPSC 210 course project I kept extending well beyond the requirements. The game logic is object-oriented and test-driven, with the relationships between classes designed to keep coupling to a minimum.</p>
+            <p class="project__links">
+              <a href="[https://github.com/you/blackjack]">Code <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7" /></svg></a>
+            </p>
+          </div>
+        </li>
+        <li class="project">
+          <div class="project__print" data-print="2"><canvas aria-hidden="true"></canvas><span class="project__placeholder">[Screenshot]</span></div>
+          <div class="project__body">
+            <h3>[Third project]</h3>
+            <p class="project__meta">[Year] · [Context, e.g. solo or team of 3] · [Technologies]</p>
+            <p>[The problem, what you built, what happened.]</p>
+            <p class="project__links">
+              <a href="[https://link-to-project]">Write-up <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7" /></svg></a>
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== Experience & education (newest first, newest in the darkest ink) ===== -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section__head">
+        <h2 id="experience-title">Experience &amp; education</h2>
+      </div>
+
+      <ol class="record">
+        <li class="entry" style="--depth: 1">
+          <p class="entry__when">Sep 2026 – Present</p>
+          <div class="entry__what">
+            <h3>Medical Device Software Developer</h3>
+            <p class="entry__where">Kardium Inc., Burnaby, BC</p>
+            <ul>
+              <li>Develop and maintain code in a large Java codebase (Swing, FlatLaf) for complex medical device software.</li>
+              <li>Scope features into work items and write implementation plans before development, as part of agile sprint planning and delivery.</li>
+              <li>Take part in code reviews, debug issues, and write and maintain automated tests.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="entry" style="--depth: 2">
+          <p class="entry__when">May – Aug 2026</p>
+          <div class="entry__what">
+            <h3>Research Assistant</h3>
+            <p class="entry__where">University of British Columbia, Vancouver, BC</p>
+            <ul>
+              <li>Extended a formal E-matching instantiation termination framework for SMT solvers.</li>
+              <li>Analyzed matching-loop behaviour in axiomatized theories and identified four sequence-theory failure modes, each with a proposed fix.</li>
+              <li>Wrote up the notation, definitions and worked examples, and presented the results in technical talks and on a large-format research poster.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="entry" style="--depth: 3">
+          <p class="entry__when">Oct 2025 – Present</p>
+          <div class="entry__what">
+            <h3>Software Engineer</h3>
+            <p class="entry__where">The Cornerstore, Vancouver, BC</p>
+            <ul>
+              <li>Designed and developed a REST API from business requirements using test-driven development (SQL, Python, JavaScript).</li>
+              <li>Contributed to the overall architecture design and worked in agile sprints, from planning to delivery.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="entry" style="--depth: 4">
+          <p class="entry__when">Sep 2025 – May 2026</p>
+          <div class="entry__what">
+            <h3>Computer Science Teaching Assistant</h3>
+            <p class="entry__where">University of British Columbia, Vancouver, BC</p>
+            <ul>
+              <li>Led CPSC 210 labs on object-oriented design, data structures and test-driven development, with frequent feedback and consultations for students.</li>
+              <li>Worked with professors and fellow TAs to improve the course structure and tailor lessons for students.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="entry" style="--depth: 5">
+          <p class="entry__when">Sep 2024 – May 2029</p>
+          <div class="entry__what">
+            <h3>B.Sc. Computer Science</h3>
+            <p class="entry__where">University of British Columbia, Vancouver, BC · Expected graduation May 2029</p>
+            <ul>
+              <li>GPA 93.4%. Key courses: CPSC 210, software design and construction (95%); CPSC 213, computer systems (96%); CPSC 221, algorithms and data structures (97%).</li>
+              <li>Dean&rsquo;s Scholar and Trek Excellence Scholarship (top 5%), 2025; Presidential Scholar Award, 2024.</li>
+              <li>AWS Certified Cloud Practitioner, July 2025.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== References ===== -->
+    <section class="section" id="references" aria-labelledby="references-title">
+      <div class="section__head">
+        <h2 id="references-title">What people I've worked with say</h2>
+      </div>
+
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote><p>[Their exact words, used with permission. One or two sentences about something specific you did.]</p></blockquote>
+          <figcaption><strong>[Name]</strong><span>[Title], [Company]</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote><p>[A second quote, ideally about a different strength.]</p></blockquote>
+          <figcaption><strong>[Name]</strong><span>[Title], [Company or University]</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote><p>[A third quote: a professor or teammate works well here.]</p></blockquote>
+          <figcaption><strong>[Name]</strong><span>[Title], [University]</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Fun facts ===== -->
+    <section class="section" id="fun-facts" aria-labelledby="fun-facts-title">
+      <div class="section__head">
+        <h2 id="fun-facts-title">Fun facts</h2>
+        <p>A few things that aren&rsquo;t on the résumé&rsquo;s first page.</p>
+      </div>
+
+      <ul class="funfacts">
+        <li class="funfact">
+          <h3>Provincial golf silver</h3>
+          <p>My high school team finished second in Alberta at the 2023 ASAA provincial championship, with a final team score of even par.</p>
+        </li>
+        <li class="funfact">
+          <h3>[A hobby or interest]</h3>
+          <p>[One or two sentences: what it is and why you like it.]</p>
+        </li>
+        <li class="funfact">
+          <h3>[Something you're learning]</h3>
+          <p>[A language, instrument, framework or skill you're picking up right now.]</p>
+        </li>
+        <li class="funfact">
+          <h3>[A surprising fact]</h3>
+          <p>[Something a teammate would be surprised to learn about you.]</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="close" id="contact" aria-labelledby="contact-title">
+      <div class="close__print" data-print="3" aria-hidden="true"><canvas></canvas></div>
+      <div class="close__body">
+        <h2 id="contact-title">Let's talk.</h2>
+        <p>I&rsquo;m looking for my next software engineering co-op [term]. Email is the fastest way to reach me.</p>
+
+        <div class="email">
+          <a class="email__address" href="mailto:zhanger16@icloud.com">zhanger16@icloud.com</a>
+          <button class="email__copy" type="button" id="copyEmail" data-email="zhanger16@icloud.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="12" rx="1.5" /><path d="M5 15V5.5A1.5 1.5 0 0 1 6.5 4H15" /></svg>
+            <span id="copyLabel">Copy</span>
+          </button>
+          <span class="visually-hidden" role="status" id="copyStatus"></span>
+        </div>
+
+        <ul class="links">
+          <li><a href="assets/resume.pdf" download data-resume>Résumé (PDF)</a></li>
+          <li><a href="[https://www.linkedin.com/in/your-profile]">LinkedIn</a></li>
+          <li><a href="[https://github.com/your-username]">GitHub</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Ryan Zhang</p>
+    <p>Last updated November 2026</p>
+  </footer>
+
+  <!-- Phone-only action bar, shown after the opening buttons scroll away -->
+  <div class="dock" id="dock" aria-hidden="true">
+    <a class="btn btn--ink" href="assets/resume.pdf" download data-resume tabindex="-1">Résumé</a>
+    <a class="btn btn--line" href="mailto:zhanger16@icloud.com" tabindex="-1">Email me</a>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

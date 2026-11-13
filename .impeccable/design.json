@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T20:00:00Z",
+  "title": "Design System: Suminagashi Ink Basin",
+  "extensions": {
+    "colorMeta": {
+      "indigo": {
+        "role": "primary",
+        "displayName": "Basin Indigo",
+        "canonical": "oklch(21.9% 0.054 259)",
+        "tonalRamp": [
+          "#050b16",
+          "#1b2535",
+          "#354358",
+          "#50627e",
+          "#7183a1",
+          "#96a6c0",
+          "#bccadf",
+          "#e5efff"
+        ]
+      },
+      "current": {
+        "role": "primary",
+        "displayName": "Current",
+        "canonical": "oklch(29.9% 0.057 263)",
+        "tonalRamp": [
+          "#060b16",
+          "#1c2536",
+          "#36425a",
+          "#516180",
+          "#7283a2",
+          "#97a6c1",
+          "#bdcae1",
+          "#e5efff"
+        ]
+      },
+      "dilute": {
+        "role": "secondary",
+        "displayName": "Dilute Ink",
+        "canonical": "oklch(49.4% 0.042 263)",
+        "tonalRamp": [
+          "#070b13",
+          "#1e2532",
+          "#394254",
+          "#566278",
+          "#76839a",
+          "#9aa6ba",
+          "#c0cadb",
+          "#e8effc"
+        ]
+      },
+      "feather": {
+        "role": "neutral",
+        "displayName": "Feather",
+        "canonical": "oklch(77.4% 0.019 258)",
+        "tonalRamp": [
+          "#090b0f",
+          "#22252b",
+          "#3d424a",
+          "#5b626c",
+          "#7c838d",
+          "#9fa5af",
+          "#c4c9d1",
+          "#ebeff5"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(91.1% 0.010 253)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#232528",
+          "#3f4246",
+          "#5e6266",
+          "#7f8388",
+          "#a2a5aa",
+          "#c6c9cd",
+          "#eceff1"
+        ]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Paper Deep",
+        "canonical": "oklch(95.1% 0.006 255)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242527",
+          "#404245",
+          "#5f6164",
+          "#808286",
+          "#a3a5a8",
+          "#c7c9cc",
+          "#edeef0"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(97.6% 0.003 265)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#252526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#a4a5a6",
+          "#c8c9ca",
+          "#eeeeef"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The owner's name only, crossing from the margin into the basin."
+      },
+      "display-close": {
+        "displayName": "Display Close",
+        "purpose": "The closing invitation above the contact details."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project names; the lead project steps up a size."
+      },
+      "title-entry": {
+        "displayName": "Title Entry",
+        "purpose": "Role titles in the experience record, 400 so they hold in diluted ink."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The one opening sentence, max 30ch."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "Reference quotes, italic."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose and lists, 58-62ch, lining numerals."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Fact labels, meta lines, captions, in dilute."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Buttons and emphasised links."
+      }
+    },
+    "shadows": [],
+    "materials": [
+      {
+        "name": "dock-frost",
+        "value": "background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(10px)",
+        "purpose": "Phone-only bottom action dock; the one translucent surface."
+      },
+      {
+        "name": "ink-feather",
+        "value": "mask: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent)",
+        "purpose": "Feathers print bands into the paper; gradients are only ever masks on ink."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid var(--indigo); outline-offset: 3px",
+        "purpose": "Every focusable element."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "House ease for every transition."
+      },
+      {
+        "name": "hover",
+        "value": "0.2s",
+        "purpose": "Link underline and nav colour changes."
+      },
+      {
+        "name": "control",
+        "value": "0.25s",
+        "purpose": "Button colour/press and mobile menu."
+      },
+      {
+        "name": "surface",
+        "value": "0.3s-0.35s",
+        "purpose": "Masthead solidifying, toast, phone dock."
+      },
+      {
+        "name": "print-reveal",
+        "value": "1.2s-1.4s",
+        "purpose": "Pulled prints fading in; the basin hint appears after a 1.4s delay."
+      },
+      {
+        "name": "basin-settle",
+        "value": "6000ms",
+        "purpose": "Fluid sim stops stepping after 6s without a touch."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "single still frame",
+        "purpose": "Finished marbled sheet drawn once; all transitions ~0."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "960px"
+      },
+      {
+        "name": "phone",
+        "value": "760px"
+      }
+    ],
+    "shaderMirror": {
+      "PAPER": "--paper",
+      "DILUTE": "--dilute",
+      "INDIGO": "--indigo",
+      "source": "assets/js/main.js"
+    },
+    "knownOpenItems": [
+      "Some marbled cores read as eye or heart shapes.",
+      "One desktop ink island sits separate from the main body.",
+      "On phone the ink grazes rather than underlies the name.",
+      "A bottom-right desktop cluster looks clipped by the frame edge."
+    ]
+  },
+  "components": [
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Primary action (Résumé): indigo fill, paper text.",
+      "html": "<a class=\"ds-btn ds-btn-ink\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v11M7 10l5 5 5-5M5 20h14\"/></svg>Download résumé</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.55em; min-height: 48px; padding: 0 1.4em; border-radius: var(--radius, 6px); font: 500 1rem/1 \"Alegreya Sans\", \"Gill Sans\", \"Segoe UI\", system-ui, sans-serif; letter-spacing: 0.01em; text-decoration: none; white-space: nowrap; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid var(--indigo, #0a1a33); outline-offset: 3px; } .ds-btn-ink { background: var(--indigo, #0a1a33); color: var(--paper, #f6f7f9); border: 1px solid var(--indigo, #0a1a33); } .ds-btn-ink:hover { background: var(--current, #1e2d4a); } .ds-icon { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action (Email): 1px indigo outline, fills with ink on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Email me</a>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.4em; border-radius: var(--radius, 6px); border: 1px solid var(--indigo, #0a1a33); color: var(--indigo, #0a1a33); background: color-mix(in srgb, var(--paper, #f6f7f9) 85%, transparent); font: 500 1rem/1 \"Alegreya Sans\", system-ui, sans-serif; letter-spacing: 0.01em; text-decoration: none; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line:hover { background: var(--indigo, #0a1a33); color: var(--paper, #f6f7f9); } .ds-btn-line:active { transform: translateY(1px); } .ds-btn-line:focus-visible { outline: 2px solid var(--indigo, #0a1a33); outline-offset: 3px; }"
+    },
+    {
+      "name": "Masthead Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Section links in dilute; hover and current section darken to indigo with a 1px underline rule.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"true\">Projects</a><a href=\"#\">Experience</a><a href=\"#\">References</a><a href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 28px; padding: 20px 24px; background: var(--paper, #f6f7f9); border-bottom: 1px solid var(--mist, #dde2e8); font-family: \"Alegreya Sans\", system-ui, sans-serif; } .ds-nav a { font-size: 1rem; color: var(--dilute, #55627a); text-decoration: none; padding: 6px 0; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; } .ds-nav a:hover, .ds-nav a[aria-current=\"true\"] { color: var(--indigo, #0a1a33); border-bottom-color: var(--indigo, #0a1a33); } .ds-nav a:focus-visible { outline: 2px solid var(--indigo, #0a1a33); outline-offset: 3px; }"
+    },
+    {
+      "name": "Inline Link",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Inherits text colour with a 1px feather underline that darkens on hover.",
+      "html": "<p class=\"ds-link-row\"><a href=\"#\">Code <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 16L16 8M9 8h7v7\"/></svg></a><a href=\"#\">Live demo <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 16L16 8M9 8h7v7\"/></svg></a></p>",
+      "css": ".ds-link-row { display: flex; gap: 20px; font: 500 18px/1.55 \"Alegreya Sans\", system-ui, sans-serif; color: var(--indigo, #0a1a33); } .ds-link-row a { display: inline-flex; align-items: center; gap: 4px; color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.22em; text-decoration-color: var(--feather, #aeb6c2); transition: text-decoration-color 0.2s; } .ds-link-row a:hover { text-decoration-color: currentColor; } .ds-link-row a:focus-visible { outline: 2px solid var(--indigo, #0a1a33); outline-offset: 3px; } .ds-link-row svg { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "Outlined mist control beside the email; firms to indigo on hover and fills with ink once copied.",
+      "html": "<button class=\"ds-copy\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"8\" y=\"8\" width=\"11\" height=\"12\" rx=\"1.5\"/><path d=\"M5 15V5.5A1.5 1.5 0 0 1 6.5 4H15\"/></svg>Copy</button> <button class=\"ds-copy is-done\" type=\"button\">Copied</button>",
+      "css": ".ds-copy { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 1px solid var(--mist, #dde2e8); border-radius: var(--radius, 6px); background: transparent; font: 500 0.95rem/1.3 \"Alegreya Sans\", system-ui, sans-serif; color: var(--indigo, #0a1a33); cursor: pointer; transition: border-color 0.2s, background-color 0.2s; } .ds-copy:hover { border-color: var(--indigo, #0a1a33); } .ds-copy:focus-visible { outline: 2px solid var(--indigo, #0a1a33); outline-offset: 3px; } .ds-copy.is-done { background: var(--indigo, #0a1a33); border-color: var(--indigo, #0a1a33); color: var(--paper, #f6f7f9); } .ds-copy svg { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Experience Record",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Hairline-ruled rows; ink depth and drop size step down with age (newest darkest).",
+      "html": "<ol class=\"ds-record\"><li style=\"--ink:#0a1a33;--drop:14px\"><p class=\"ds-when\">Jun – Aug 2026</p><div><h3>Software Engineering Intern</h3><p class=\"ds-where\">Company, City</p></div></li><li style=\"--ink:#1e2d4a;--drop:10px\"><p class=\"ds-when\">Jan – May 2026</p><div><h3>Research Assistant</h3><p class=\"ds-where\">Lab, University</p></div></li><li style=\"--ink:#55627a;--drop:7px\"><p class=\"ds-when\">2023 – 2027</p><div><h3>B.S. Computer Science</h3><p class=\"ds-where\">University</p></div></li></ol>",
+      "css": ".ds-record { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--mist, #dde2e8); font-family: \"Alegreya Sans\", system-ui, sans-serif; } .ds-record li { display: grid; grid-template-columns: minmax(150px, 3fr) minmax(0, 9fr); gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--mist, #dde2e8); color: var(--ink); } .ds-record p, .ds-record h3 { margin: 0; } .ds-when { display: flex; align-items: baseline; gap: 14px; font-weight: 500; font-variant-numeric: tabular-nums; } .ds-when::before { content: \"\"; flex: none; width: var(--drop); height: var(--drop); border-radius: 50%; background: var(--ink); } .ds-record h3 { font-size: 1.6rem; font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; } .ds-where { margin-top: 4px; color: var(--dilute, #55627a); }"
+    },
+    {
+      "name": "Reference Quote",
+      "kind": "card",
+      "refersTo": "",
+      "description": "Indigo top rule, italic quote in current, attribution below; no card fill.",
+      "html": "<figure class=\"ds-quote\"><blockquote>One or two sentences about something specific you did.</blockquote><figcaption><strong>Name</strong><span>Title, Company</span></figcaption></figure>",
+      "css": ".ds-quote { margin: 0; max-width: 360px; display: grid; gap: 22px; padding-top: 26px; border-top: 1px solid var(--indigo, #0a1a33); font-family: \"Alegreya Sans\", system-ui, sans-serif; color: var(--indigo, #0a1a33); } .ds-quote blockquote { margin: 0; font-size: 1.35rem; font-style: italic; line-height: 1.4; color: var(--current, #1e2d4a); } .ds-quote figcaption { display: grid; gap: 2px; font-size: 0.95rem; } .ds-quote figcaption span { color: var(--dilute, #55627a); }"
+    },
+    {
+      "name": "Toast",
+      "kind": "custom",
+      "refersTo": "toast",
+      "description": "Indigo status message that rises into place at the bottom centre.",
+      "html": "<div class=\"ds-toast\" role=\"status\">Email address copied.</div>",
+      "css": ".ds-toast { display: inline-block; padding: 12px 18px; border-radius: var(--radius, 6px); background: var(--indigo, #0a1a33); color: var(--paper, #f6f7f9); font: 400 0.95rem/1.4 \"Alegreya Sans\", system-ui, sans-serif; animation: ds-rise 0.3s cubic-bezier(0.16,1,0.3,1); } @keyframes ds-rise { from { opacity: 0; transform: translateY(16px); } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Marbling Sheet",
+    "overview": "**Creative North Star: \"The Marbling Sheet\"**\n\nThe page is a sheet of suminagashi paper. One live basin of indigo ink floats on paper-white water, and beside it sits a still margin of plain facts set in light humanist sans. The ink is computed, not painted: the opening pattern is a list of marbling operations (ink drops, water drops, a wave, the comb's tines) undone per pixel so every line stays crisp, after which a small fluid simulation lets the visitor stir the water and drop fresh ink.\n\nEverything outside the basin is quiet. Structure comes from 1px hairlines, ink depth and type weight, never from cards, shadows or tinted panels. The palette is a single indigo family stepped from paper to deep ink, so the page reads as one material. Density is low and the rhythm is generous; the margin holds only what a reader needs to decide.\n\nThe world rejects the dark neon developer portfolio and the split hero with a row of icon cards. It also rejects gradients used as chrome and glow of any kind.",
+    "keyCharacteristics": [
+      "One live ink basin per page; the rest of the sheet is still paper.",
+      "A single indigo hue family from paper (#f6f7f9) to deep ink (#0a1a33); no second hue.",
+      "Light display type (300) with negative tracking; emphasis by weight 500, not colour.",
+      "Hairline structure (1px mist or indigo rules); no shadows anywhere.",
+      "Recency shown by ink depth: the newest thing is the darkest.",
+      "Placeholder imagery is a print pulled from the basin, never stock."
+    ],
+    "rules": [
+      {
+        "name": "The One Ink Rule",
+        "body": "Every colour on the page is the indigo family above. A new surface adds no hue; it picks a strength of the same ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shader Mirror Rule",
+        "body": "The CSS custom properties (--paper, --dilute, --indigo) and the shader constants (PAPER, DILUTE, INDIGO in main.js) are one source told twice. Change one and you change the other.",
+        "section": "colors"
+      },
+      {
+        "name": "The Light Display Rule",
+        "body": "Headings are set at 300 (title-entry at 400) with negative tracking and balanced wrapping. Weight 500 marks emphasis in running text; 700 appears only as the browser's bold for quote attributions.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Edge Rule",
+        "body": "New sections align to the shared content inset; nothing floats on its own left edge.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "Nothing casts a shadow. To lift or separate, use a hairline, a step of ink, or paper-deep.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Newest Is Darkest Rule",
+        "body": "Recency is shown by ink depth: the newest experience entry is indigo with a 14px drop, the next current with 10px, the oldest dilute with 7px; in the basin each site's newest drop is the darkest.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** pick every colour from the indigo family (indigo, current, dilute, feather, mist, paper-deep, paper) and keep the shader constants in step with the CSS properties.",
+      "**Do** separate content with 1px mist hairlines and mark emphasis with a 1px indigo rule.",
+      "**Do** set headings at weight 300 with negative tracking; emphasise running text at 500.",
+      "**Do** show recency by ink depth: newest darkest, older entries diluted.",
+      "**Do** keep text on the still paper margin; let the basin's ink fade out beneath it.",
+      "**Do** keep the house ease (cubic-bezier(0.16, 1, 0.3, 1)) and render a single still frame under reduced motion.",
+      "**Do** use gradients only as masks that feather ink edges into the paper."
+    ],
+    "donts": [
+      "**Don't** use box-shadow, glow or tinted panels for depth.",
+      "**Don't** fill buttons, bars or backgrounds with gradients; gradients exist only to feather ink.",
+      "**Don't** introduce a second hue or a neon accent.",
+      "**Don't** build card rows with icons; content sits on the sheet between hairlines.",
+      "**Don't** add a second live animated surface; the basin is the one authored moment and prints are still once pulled.",
+      "**Don't** use feather for text; it is too light to read."
+    ]
+  }
+}
