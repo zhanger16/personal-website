@@ -1,5 +1,7 @@
 (() => {
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // The basins always show the finished sheet as one still frame: no opening
+  // animation, no stirring. Set to false to bring the motion back.
+  const still = true;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const phone = window.matchMedia("(max-width: 760px)");
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -555,7 +557,7 @@
         drawPattern(Infinity);
         stirred();
       }
-      if (reduceMotion) {
+      if (still) {
         // One still frame of the finished sheet; nothing moves.
         if (!settle) drawPattern(Infinity);
         patternLive = false;
@@ -572,11 +574,11 @@
     }, { rootMargin: "0px 0px -10% 0px" }).observe(canvas);
     addEventListener("resize", () => {
       if (!started) return;
-      if (reduceMotion) { if (resize()) { drawPattern(Infinity); if (settle) stirred(); } render(); return; }
+      if (still) { if (resize()) { drawPattern(Infinity); if (settle) stirred(); } render(); return; }
       wake();
     });
 
-    if (reduceMotion) return { recompose() { if (started) { comp = compose({ aspect, ...sheet() }); drawPattern(Infinity); render(); } } };
+    if (still) return { recompose() { if (started) { comp = compose({ aspect, ...sheet() }); drawPattern(Infinity); render(); } } };
 
     /* Visitors: stir with the mouse, click to drop ink */
     const toUv = (e) => {
