@@ -28,18 +28,6 @@
     }
   });
 
-  /* ---------- Résumé: on a real server, check the PDF exists ---------- */
-  if (location.protocol.startsWith("http")) {
-    fetch("assets/resume.pdf", { method: "HEAD" })
-      .then((res) => { if (!res.ok) throw new Error(res.status); })
-      .catch(() => {
-        $$("[data-resume]").forEach((a) => a.addEventListener("click", (e) => {
-          e.preventDefault();
-          say("Résumé not uploaded yet. Add it at assets/resume.pdf.");
-        }));
-      });
-  }
-
   /* ---------- Masthead: border on scroll, current section, phone menu ---------- */
   const masthead = $("#masthead");
   const toggle = $("#navToggle");

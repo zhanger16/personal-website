@@ -3,7 +3,7 @@
   Personal site. Filled in from the November 2026 co-op résumé. Anything still
   in [square brackets] wasn't on the résumé; search for "[" to find them.
   Numbers and claims only go in if you can back them up.
-  - Images live in assets/img; the résumé PDF is assets/resume.pdf.
+  - Images live in assets/img. The résumé PDF is deliberately not published.
   - Colors and type live at the top of assets/css/styles.css.
 -->
 <html lang="en">
@@ -11,7 +11,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ryan Zhang · Computer Science, UBC</title>
-  <meta name="description" content="Ryan Zhang, Computer Science student at the University of British Columbia (graduating May 2029). Medical device software developer at Kardium, SMT solver research at UBC. Projects, experience and résumé." />
+  <meta name="description" content="Ryan Zhang, Computer Science student at the University of British Columbia (graduating May 2029). Medical device software developer at Kardium, SMT solver research at UBC. Projects and experience." />
   <meta name="theme-color" content="#f6f7f9" />
   <link rel="preload" href="assets/fonts/alegreya-sans-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/alegreya-sans-400.woff2" as="font" type="font/woff2" crossorigin />
@@ -27,7 +27,6 @@
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn--ink btn--small masthead__resume" href="assets/resume.pdf" download data-resume>Résumé</a>
     <button class="masthead__toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
       <span class="visually-hidden">Menu</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" /></svg>
@@ -59,11 +58,7 @@
         </dl>
 
         <div class="actions" id="openingActions">
-          <a class="btn btn--ink" href="assets/resume.pdf" download data-resume>
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
-            Download résumé
-          </a>
-          <a class="btn btn--line" href="mailto:zhanger16@icloud.com">Email me</a>
+          <a class="btn btn--ink" href="mailto:zhanger16@icloud.com">Email me</a>
         </div>
         <p class="basin-hint" aria-hidden="true">Drag across the water to stir the ink. Click to add a drop.</p>
       </div>
@@ -190,7 +185,6 @@
         </div>
 
         <ul class="links">
-          <li><a href="assets/resume.pdf" download data-resume>Résumé (PDF)</a></li>
           <li><a href="https://www.linkedin.com/in/ryan-zhang16">LinkedIn</a></li>
           <li><a href="https://github.com/zhanger16">GitHub</a></li>
         </ul>
@@ -205,8 +199,7 @@
 
   <!-- Phone-only action bar, shown after the opening buttons scroll away -->
   <div class="dock" id="dock" aria-hidden="true">
-    <a class="btn btn--ink" href="assets/resume.pdf" download data-resume tabindex="-1">Résumé</a>
-    <a class="btn btn--line" href="mailto:zhanger16@icloud.com" tabindex="-1">Email me</a>
+    <a class="btn btn--ink" href="mailto:zhanger16@icloud.com" tabindex="-1">Email me</a>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
