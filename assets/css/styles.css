@@ -113,13 +113,7 @@ a:hover { text-decoration-color: currentColor; }
 
 .opening__margin { position: relative; width: min(100%, 560px); display: grid; gap: 28px; justify-items: start; }
 .portrait { width: clamp(112px, 11vw, 148px); }
-.portrait img, .portrait__slot { width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius); object-fit: cover; }
-.portrait__slot {
-  display: grid; place-items: center;
-  background: var(--paper-deep); border: 1px dashed var(--feather);
-  color: var(--dilute); font-size: 0.9rem;
-  padding: 12px; text-align: center;
-}
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; border-radius: var(--radius); object-fit: cover; object-position: 52% center; }
 .opening__name {
   font-size: clamp(3.4rem, 7.4vw, 6rem);
   font-weight: 300; letter-spacing: -0.035em; line-height: 0.95;
@@ -149,11 +143,12 @@ a:hover { text-decoration-color: currentColor; }
 .section__head h2 { font-size: clamp(2.3rem, 3.6vw, 3.4rem); }
 .section__head p { color: var(--dilute); font-size: 1.1rem; }
 
-/* Projects: the newest leads at full width, the next two share a row */
+/* Projects: each screenshot project gets a full-width row; text-only ones sit below */
 .projects { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(48px, 6vw, 80px) clamp(28px, 4vw, 56px); }
 .project { display: grid; gap: 22px; align-content: start; }
 .project--lead { grid-column: 1 / -1; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
 .project__print { position: relative; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden; background: var(--paper-deep); border: 1px solid var(--mist); }
+.project__print img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .project__print canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s var(--ease); }
 .project__print.is-pulled, .close__print.is-pulled { cursor: crosshair; }
 .project__placeholder { pointer-events: none; }
@@ -166,6 +161,7 @@ a:hover { text-decoration-color: currentColor; }
 .project__body { display: grid; gap: 10px; justify-items: start; }
 .project__meta { font-size: 0.9rem; color: var(--dilute); margin-top: -2px; }
 .project h3 { font-size: clamp(1.6rem, 2vw, 2rem); }
+.project--text { grid-column: 1 / -1; max-width: 640px; }
 .project--lead h3 { font-size: clamp(2rem, 2.8vw, 2.6rem); }
 .project__body > p:not([class]) { max-width: 58ch; color: var(--current); }
 .project__result { padding: 2px 0 2px 14px; border-left: 1px solid var(--indigo); font-weight: 500; max-width: 52ch; }
@@ -191,20 +187,6 @@ a:hover { text-decoration-color: currentColor; }
 .entry__where { margin-top: 4px; color: var(--dilute); }
 .entry ul { margin: 14px 0 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 62ch; color: var(--current); }
 .entry[style*="--depth: 3"] ul, .entry[style*="--depth: 4"] ul, .entry[style*="--depth: 5"] ul { color: var(--dilute); }
-
-/* References */
-.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); }
-.quote { display: grid; gap: 22px; align-content: space-between; padding-top: 26px; border-top: 1px solid var(--indigo); }
-.quote blockquote { font-size: clamp(1.2rem, 1.2vw + 0.8rem, 1.45rem); font-style: italic; line-height: 1.4; color: var(--current); }
-.quote figcaption { display: grid; gap: 2px; font-size: 0.95rem; }
-.quote figcaption span { color: var(--dilute); }
-
-/* Fun facts: two columns of short notes, each marked with a small ink drop */
-.funfacts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 48px) clamp(28px, 4vw, 56px); }
-.funfact { display: grid; gap: 10px; align-content: start; padding-top: 24px; border-top: 1px solid var(--mist); }
-.funfact h3 { display: flex; align-items: baseline; gap: 12px; font-size: clamp(1.4rem, 1.6vw, 1.7rem); font-weight: 400; }
-.funfact h3::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--indigo); transform: translateY(-3px); }
-.funfact p { color: var(--current); max-width: 52ch; }
 
 /* ============ Close ============ */
 .close { position: relative; margin-top: clamp(104px, 13vw, 176px); padding: 0 0 clamp(72px, 9vw, 120px); }
@@ -251,7 +233,6 @@ a:hover { text-decoration-color: currentColor; }
 /* ============ Responsive ============ */
 @media (max-width: 960px) {
   .project--lead { grid-template-columns: minmax(0, 1fr); }
-  .quotes { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
 }
 
 @media (max-width: 760px) {
@@ -282,7 +263,6 @@ a:hover { text-decoration-color: currentColor; }
   .actions .btn { flex: 1 1 auto; }
 
   .projects { grid-template-columns: minmax(0, 1fr); }
-  .funfacts { grid-template-columns: minmax(0, 1fr); }
   .entry { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 28px 0; }
 
   .dock {

@@ -3,8 +3,7 @@
   Personal site. Filled in from the November 2026 co-op résumé. Anything still
   in [square brackets] wasn't on the résumé; search for "[" to find them.
   Numbers and claims only go in if you can back them up.
-  - Headshot: see the "portrait" block in the opening section.
-  - Résumé: put your PDF at assets/resume.pdf.
+  - Images live in assets/img; the résumé PDF is assets/resume.pdf.
   - Colors and type live at the top of assets/css/styles.css.
 -->
 <html lang="en">
@@ -26,8 +25,6 @@
     <nav class="masthead__nav" id="nav" aria-label="Sections">
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
-      <a href="#references">References</a>
-      <a href="#fun-facts">Fun facts</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="btn btn--ink btn--small masthead__resume" href="assets/resume.pdf" download data-resume>Résumé</a>
@@ -44,23 +41,21 @@
       <div class="basin-fallback" aria-hidden="true"></div>
 
       <div class="opening__margin">
-        <!-- Replace the slot with: <img src="assets/img/headshot.jpg" alt="Ryan Zhang" width="480" height="600" /> -->
         <figure class="portrait">
-          <div class="portrait__slot"><span>[Headshot]</span></div>
+          <img src="assets/img/headshot.jpeg" alt="Ryan Zhang" width="1086" height="724" />
         </figure>
 
         <h1 class="opening__name" id="name">Ryan Zhang</h1>
 
         <p class="opening__lede">
           Computer Science student at the University of British Columbia, graduating May 2029.
-          Looking for my next <strong>software engineering co-op</strong> [term, e.g. Summer 2027].
         </p>
 
         <dl class="facts">
           <div><dt>Based in</dt><dd>Vancouver, BC</dd></div>
           <div><dt>GPA</dt><dd>93.4%</dd></div>
-          <div><dt>Work authorization</dt><dd>[e.g. Canadian citizen]</dd></div>
-          <div><dt>Available from</dt><dd>[Month Year]</dd></div>
+          <div><dt>Work authorization</dt><dd>Canadian citizen</dd></div>
+          <div><dt>Available from</dt><dd>May, 2027</dd></div>
         </dl>
 
         <div class="actions" id="openingActions">
@@ -78,43 +73,32 @@
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section__head">
         <h2 id="projects-title">Selected projects</h2>
-        <p>Things I&rsquo;ve built: the problem, what I made, and where to see it.</p>
       </div>
 
       <ol class="projects">
         <li class="project project--lead">
-          <!-- Replace the print with: <img src="assets/img/project-1.png" alt="[Describe the screenshot]" /> -->
-          <div class="project__print" data-print="0"><canvas aria-hidden="true"></canvas><span class="project__placeholder">[Screenshot]</span></div>
+          <div class="project__print"><img src="assets/img/pop-city.png" alt="Pop City: a 3D city-building scene rendered in the browser" width="2940" height="1524" loading="lazy" /></div>
           <div class="project__body">
-            <h3>Neighbours in Need</h3>
-            <p class="project__meta">nwHacks 2025 · Team project · Node.js, JavaScript, HTML, CSS</p>
-            <p>Built at nwHacks 2025, Western Canada&rsquo;s largest hackathon: a service that finds help nearby, like someone to shovel snow or walk a dog, focused on what&rsquo;s available within 24 hours. We built the web app with a Node.js backend and a JavaScript, HTML and CSS frontend.</p>
-            <p class="project__links">
-              <a href="[https://github.com/you/neighbours-in-need]">Code <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7" /></svg></a>
-              <a href="[https://devpost.com/software/neighbours-in-need]">Devpost <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7" /></svg></a>
-            </p>
+            <h3>Pop City</h3>
+            <p class="project__meta">November 2026 – Present · 3D browser city-building and adventure game · TypeScript, Playwright</p>
+            <p>A 3D city-building and adventure game that runs in the browser, with all graphics, animation and audio generated in code. Game systems include a deterministic kart-racing mode and a gacha draw system, covered by unit, simulation and Playwright UI tests.</p>
+            <p class="project__result">Took large scenes from 5 to 72 fps by merging geometry, batching draw calls and adding level of detail.</p>
           </div>
         </li>
-        <li class="project">
-          <div class="project__print" data-print="1"><canvas aria-hidden="true"></canvas><span class="project__placeholder">[Screenshot]</span></div>
+        <li class="project project--lead">
+          <div class="project__print"><img src="assets/img/arcade-fighter.png" alt="Arcade Fighter: two players mid-fight on the console screen" width="1916" height="1432" style="object-position: 50% 85%" loading="lazy" /></div>
+          <div class="project__body">
+            <h3>Arcade Fighter</h3>
+            <p class="project__meta">October – November 2026 · Team of 4, team lead · C11, Raspberry Pi Pico 2W, SDL2</p>
+            <p>A 1v1 fighting game for a physical arcade console built on a Raspberry Pi Pico 2W. I led the team of four: running design meetings, splitting the work between hardware and software, and defining the interfaces between the controller, console firmware and game logic.</p>
+            <p>The game is written in C11 around tight hardware limits, so every game state is static with no dynamic memory. A desktop simulator built on SDL2 runs it with keyboard input, so we could test before loading it onto the hardware.</p>
+          </div>
+        </li>
+        <li class="project project--text">
           <div class="project__body">
             <h3>Blackjack</h3>
-            <p class="project__meta">January 2025 · Personal project, started in CPSC 210</p>
+            <p class="project__meta">January 2025 · Personal project, started in CPSC 210 · Java, Swing, JUnit</p>
             <p>A CPSC 210 course project I kept extending well beyond the requirements. The game logic is object-oriented and test-driven, with the relationships between classes designed to keep coupling to a minimum.</p>
-            <p class="project__links">
-              <a href="[https://github.com/you/blackjack]">Code <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7" /></svg></a>
-            </p>
-          </div>
-        </li>
-        <li class="project">
-          <div class="project__print" data-print="2"><canvas aria-hidden="true"></canvas><span class="project__placeholder">[Screenshot]</span></div>
-          <div class="project__body">
-            <h3>[Third project]</h3>
-            <p class="project__meta">[Year] · [Context, e.g. solo or team of 3] · [Technologies]</p>
-            <p>[The problem, what you built, what happened.]</p>
-            <p class="project__links">
-              <a href="[https://link-to-project]">Write-up <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7" /></svg></a>
-            </p>
           </div>
         </li>
       </ol>
@@ -136,6 +120,7 @@
               <li>Develop and maintain code in a large Java codebase (Swing, FlatLaf) for complex medical device software.</li>
               <li>Scope features into work items and write implementation plans before development, as part of agile sprint planning and delivery.</li>
               <li>Take part in code reviews, debug issues, and write and maintain automated tests.</li>
+              <li>Use Git and Claude Code in a professional team workflow.</li>
             </ul>
           </div>
         </li>
@@ -152,7 +137,7 @@
           </div>
         </li>
         <li class="entry" style="--depth: 3">
-          <p class="entry__when">Oct 2025 – Present</p>
+          <p class="entry__when">Oct 2025 – Nov 2026</p>
           <div class="entry__what">
             <h3>Software Engineer</h3>
             <p class="entry__where">The Cornerstore, Vancouver, BC</p>
@@ -188,61 +173,12 @@
       </ol>
     </section>
 
-    <!-- ===== References ===== -->
-    <section class="section" id="references" aria-labelledby="references-title">
-      <div class="section__head">
-        <h2 id="references-title">What people I've worked with say</h2>
-      </div>
-
-      <div class="quotes">
-        <figure class="quote">
-          <blockquote><p>[Their exact words, used with permission. One or two sentences about something specific you did.]</p></blockquote>
-          <figcaption><strong>[Name]</strong><span>[Title], [Company]</span></figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote><p>[A second quote, ideally about a different strength.]</p></blockquote>
-          <figcaption><strong>[Name]</strong><span>[Title], [Company or University]</span></figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote><p>[A third quote: a professor or teammate works well here.]</p></blockquote>
-          <figcaption><strong>[Name]</strong><span>[Title], [University]</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ===== Fun facts ===== -->
-    <section class="section" id="fun-facts" aria-labelledby="fun-facts-title">
-      <div class="section__head">
-        <h2 id="fun-facts-title">Fun facts</h2>
-        <p>A few things that aren&rsquo;t on the résumé&rsquo;s first page.</p>
-      </div>
-
-      <ul class="funfacts">
-        <li class="funfact">
-          <h3>Provincial golf silver</h3>
-          <p>My high school team finished second in Alberta at the 2023 ASAA provincial championship, with a final team score of even par.</p>
-        </li>
-        <li class="funfact">
-          <h3>[A hobby or interest]</h3>
-          <p>[One or two sentences: what it is and why you like it.]</p>
-        </li>
-        <li class="funfact">
-          <h3>[Something you're learning]</h3>
-          <p>[A language, instrument, framework or skill you're picking up right now.]</p>
-        </li>
-        <li class="funfact">
-          <h3>[A surprising fact]</h3>
-          <p>[Something a teammate would be surprised to learn about you.]</p>
-        </li>
-      </ul>
-    </section>
-
     <!-- ===== Contact ===== -->
     <section class="close" id="contact" aria-labelledby="contact-title">
       <div class="close__print" data-print="3" aria-hidden="true"><canvas></canvas></div>
       <div class="close__body">
         <h2 id="contact-title">Let's talk.</h2>
-        <p>I&rsquo;m looking for my next software engineering co-op [term]. Email is the fastest way to reach me.</p>
+        <p>I&rsquo;m looking for a software engineering co-op starting May 2027. Email is the fastest way to reach me.</p>
 
         <div class="email">
           <a class="email__address" href="mailto:zhanger16@icloud.com">zhanger16@icloud.com</a>
@@ -255,8 +191,8 @@
 
         <ul class="links">
           <li><a href="assets/resume.pdf" download data-resume>Résumé (PDF)</a></li>
-          <li><a href="[https://www.linkedin.com/in/your-profile]">LinkedIn</a></li>
-          <li><a href="[https://github.com/your-username]">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/ryan-zhang16">LinkedIn</a></li>
+          <li><a href="https://github.com/zhanger16">GitHub</a></li>
         </ul>
       </div>
     </section>
