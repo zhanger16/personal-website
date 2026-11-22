@@ -129,13 +129,6 @@ a:hover { text-decoration-color: currentColor; }
 .facts dd { margin: 0; font-weight: 500; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.basin-hint {
-  margin-top: -8px;
-  font-size: 0.9rem; font-style: italic; color: var(--dilute);
-  opacity: 0; transition: opacity 1.2s var(--ease) 1.4s;
-}
-.basin-live .basin-hint { opacity: 1; }
-@media (hover: none) { .basin-hint { display: none; } }
 
 /* ============ Sections ============ */
 .section { max-width: var(--max); margin: 0 auto; padding: clamp(88px, 11vw, 152px) var(--gutter) 0; }
